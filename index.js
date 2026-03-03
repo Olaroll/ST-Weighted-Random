@@ -1,17 +1,17 @@
 /**
  * Weighted Random Macros Extension for SillyTavern
- * 
+ *
  * Provides {{wrandom}} and {{wpick}} macros that support weighted selection
  * instead of uniform random selection.
- * 
+ *
  * Syntax:
  * {{wrandom::60:common::30:uncommon::10:rare}}
  * {{wpick::3:apple::0.1:banana::0:no pear}}
  */
 
-import { seedrandom } from '../../../lib.js';
-import { chat_metadata, getCurrentChatId } from '../../../script.js';
-import { getStringHash } from '../../utils.js';
+import { seedrandom } from '../../../../lib.js';
+import { chat_metadata, getCurrentChatId } from '../../../../script.js';
+import { getStringHash } from '../../../utils.js';
 
 (function() {
     'use strict';
@@ -21,7 +21,7 @@ import { getStringHash } from '../../utils.js';
     /**
      * Parses weighted list arguments and returns items with their weights.
      * Format: weight1:item1::weight2:item2::weight3:item3
-     * 
+     *
      * @param {string[]} args - Array of arguments from the macro
      * @returns {{ items: string[], weights: number[], totalWeight: number, error: string|null }}
      */
@@ -69,7 +69,7 @@ import { getStringHash } from '../../utils.js';
 
     /**
      * Selects a random item based on weights.
-     * 
+     *
      * @param {string[]} items - Array of items to choose from
      * @param {number[]} weights - Array of weights corresponding to items
      * @param {number} totalWeight - Sum of all weights
